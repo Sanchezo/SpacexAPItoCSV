@@ -19,7 +19,7 @@ def getdata(url):
     except requests.exceptions.HTTPError:
         raise SpaceXHTTPError("Unable to get the data")
 data=getdata(url)
-for row in response.json(): #We convert the rows from JSON file into strings
+for row in data: #We convert the rows from JSON file into strings
     f_number = row.get('flight_number', None)
     name = row.get('mission_name', None)
     craft = row.get('rocket', None)
